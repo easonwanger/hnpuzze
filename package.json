@@ -1,0 +1,14 @@
+{
+  "name": "hnpuzzle",
+  "version": "1.0.0",
+  "description": "play and auto play",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "eason wang",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^24.7.1"
+  }
+}
