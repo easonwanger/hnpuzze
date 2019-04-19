@@ -66,4 +66,4 @@ Pole.stepByStepAlign = stepByStepAlign
 
 export default Pole
 
-//var it = align(new Pole('A',3),new Pole('B'),new Pole('C'))
+
