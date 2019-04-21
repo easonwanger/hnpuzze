@@ -13,19 +13,28 @@ class Pole{
 
 }
 
- function align(origin, temp, target) {
+function align(or, te, ta,cb){
 
-    if (origin.dishes.length == 1) {
-        moveDish(origin.dishes.shift(),origin, target)
-    } else {
-        let last = origin.dishes.pop()
-        align(origin, target, temp)
-        moveDish(last, origin, target)
-        align(temp, origin, target)
+    function _align(origin, temp, target) {
 
+        if (origin.dishes.length == 1) {
+            const mo = origin.dishes.shift();
+            moveDish(mo,origin, target)
+            if(cb)cb(mo,origin,target)
+        } else {
+            let last = origin.dishes.pop()
+            _align(origin, target, temp)
+            moveDish(last, origin, target)
+            if(cb)cb(last,origin,target)
+            _align(temp, origin, target)
+    
+        }
+    
     }
-
+    _align(or,te,ta)
 }
+
+ 
 
 /**
  * move dishes from one pole to another, in asynchorous style
@@ -56,7 +65,8 @@ class Pole{
  */
 function moveDish(md, from, to) {
 
-    to.dishes.unshift(md)
+    to.dishes.unshift(md)    
+    
     console.log(`${md} ${from.name}-->${to.name}`)
 
 }
