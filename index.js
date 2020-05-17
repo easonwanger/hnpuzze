@@ -1,4 +1,4 @@
-//entry file
+//entry file in dev
  
  import  Pole from './hn'
 
